@@ -39,6 +39,9 @@ class MainActivity : ComponentActivity() {
     }
 }
 
+// This seems like a great tutorial for what I need to do!
+// https://www.answertopia.com/jetpack-compose/a-jetpack-compose-room-database-and-repository-tutorial/
+
 @Composable
 fun Main() {
     val context = LocalContext.current
