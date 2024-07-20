@@ -1,6 +1,9 @@
 plugins {
     alias(libs.plugins.android.application)
     alias(libs.plugins.jetbrains.kotlin.android)
+
+    // https://medium.com/@rowaido.game/implementing-the-room-library-with-jetpack-compose-590d13101fa7
+    id("com.google.devtools.ksp")
 }
 
 android {
@@ -41,6 +44,9 @@ android {
     }
     composeOptions {
         kotlinCompilerExtensionVersion = "1.5.1"
+
+        // https://medium.com/@rowaido.game/implementing-the-room-library-with-jetpack-compose-590d13101fa7
+        //kotlinCompilerExtensionVersion = "1.5.11"
     }
     packaging {
         resources {
@@ -66,4 +72,13 @@ dependencies {
     androidTestImplementation(libs.androidx.ui.test.junit4)
     debugImplementation(libs.androidx.ui.tooling)
     debugImplementation(libs.androidx.ui.test.manifest)
+
+    // https://medium.com/@rowaido.game/implementing-the-room-library-with-jetpack-compose-590d13101fa7
+    /* This is crazy? How are people supposed to know how to do this, and especially "fix" it when it doesn't work?
+    implementation(libs.androidx.room.runtime)
+    implementation(libs.androidx.room.ktx)
+    ksp(libs.androidx.room.compiler)
+
+    implementation(libs.androidx.lifecycle.viewmodel.compose)
+    */
 }
