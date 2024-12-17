@@ -4,6 +4,9 @@ plugins {
 
     // https://medium.com/@rowaido.game/implementing-the-room-library-with-jetpack-compose-590d13101fa7
     id("com.google.devtools.ksp")
+
+    // For Room (2024-12-17)
+    kotlin("kapt")
 }
 
 android {
@@ -81,4 +84,17 @@ dependencies {
 
     implementation(libs.androidx.lifecycle.viewmodel.compose)
     */
+
+    // For Room (2024-12-17)
+    // https://www.youtube.com/watch?v=bOd3wO0uFr8&themeRefresh=1
+    /* build.gradle version * /
+    def room_version: String = "2.5.0"
+    implementation"androidx.room:room-ktx:$room_version"
+    kapt "androidx.room:room-compiler:$room_version"
+    // */
+    /* build.grade.kts version */
+    val room_version: String = "2.5.0"
+    implementation("androidx.room:room-ktx:$room_version")
+    kapt("androidx.room:room-compiler:$room_version")
+    // */
 }
